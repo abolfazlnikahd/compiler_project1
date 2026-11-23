@@ -1,0 +1,31 @@
+// Global variables, arrays and initializers
+x: integer = 42;
+flag: boolean = true;
+c: char = 'a';
+nl: char = '\n';
+msg: string = "hello\n\t\"world\"";
+primes: array [5] integer = {2, 3, 5, 7, 11};
+grid: array [2] array [2] integer = {{1, 2}, {3, 4}};
+
+/* block comment
+   over several lines */
+square: function integer ( v: integer );          // prototype
+power: function integer ( base: integer, e: integer ) = {
+    return base ^ e ^ 1;
+}
+square: function integer ( v: integer ) = { return v * v; }
+
+main: function integer () = {
+    i: integer;
+    total: integer = 0;
+    for (i = 0; i < 5; i++) {
+        total = total + primes[i] * 2 - -1;
+    }
+    for (;;) { break_me: integer = 1; return 0; }
+    while (total > 0 && !(total == 3) || flag) total--;
+    if (total >= 10) print "big", total, "\n";
+    else if (total != 0) print "small";
+    else print;
+    print square(power(2, 3)), msg;
+    return 0;
+}

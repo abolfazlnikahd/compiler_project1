@@ -1,0 +1,4 @@
+a: char = '';
+b: char = 'ab';
+c: string = "bad \q escape";
+d: char = 'x

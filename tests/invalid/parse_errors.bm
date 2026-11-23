@@ -1,0 +1,18 @@
+x: integer = ;
+y: integer = 42;
+f: function integer ( a: integer ) = {
+    if (y > 0
+    {
+        return y
+    }
+    z: integer = (1 + ;
+    return a;
+}
+}
+w: integer = 7;
+else
+1 + 2;
+g: function void () = {
+    a: integer
+    b: integer = 3;
+    3 = a;

@@ -1,0 +1,3 @@
+x: integer = 5@;      /* '@' is not a valid B-Minor token */
+y: integer = 10;
+z: integer = 3 & 4;

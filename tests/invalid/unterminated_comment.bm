@@ -1,0 +1,3 @@
+a: integer = 1;
+/* never closed
+b: integer = 2;

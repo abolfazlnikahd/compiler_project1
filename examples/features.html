@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>tests/valid/features.bm</title>
+<style>
+body{background:#1e1e1e;margin:0;padding:1.5rem;}
+pre.code{font:14px/1.5 Consolas,"DejaVu Sans Mono",monospace;color:#e6e6e6;background:#252526;padding:1rem 1.25rem;border-radius:8px;overflow-x:auto;tab-size:4;}
+.kw{color:#4aa3ff;font-weight:bold}
+.ty{color:#2ec4b6}
+.var{color:#e6e6e6}
+.fn{color:#e6c200}
+.lit.num,.lit.bool{color:#ff9e3d}
+.lit.str{color:#7ec16e}
+.op{color:#b0b0b0}
+.cmt{color:#7a7a7a;font-style:italic}
+.err{color:#ff6b6b;text-decoration:underline;text-decoration-color:#ff3b3b;text-decoration-thickness:2px;text-underline-offset:3px}
+</style>
+</head>
+<body>
+<pre class="code"><span class="cmt">// Global variables, arrays and initializers</span>
+<span class="var">x</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">=</span> <span class="lit num">42</span><span class="op">;</span>
+<span class="var">flag</span><span class="op">:</span> <span class="ty">boolean</span> <span class="op">=</span> <span class="lit bool">true</span><span class="op">;</span>
+<span class="var">c</span><span class="op">:</span> <span class="ty">char</span> <span class="op">=</span> <span class="lit str">'a'</span><span class="op">;</span>
+<span class="var">nl</span><span class="op">:</span> <span class="ty">char</span> <span class="op">=</span> <span class="lit str">'\n'</span><span class="op">;</span>
+<span class="var">msg</span><span class="op">:</span> <span class="ty">string</span> <span class="op">=</span> <span class="lit str">&quot;hello\n\t\&quot;world\&quot;&quot;</span><span class="op">;</span>
+<span class="var">primes</span><span class="op">:</span> <span class="kw">array</span> <span class="op">[</span><span class="lit num">5</span><span class="op">]</span> <span class="ty">integer</span> <span class="op">=</span> <span class="op">{</span><span class="lit num">2</span><span class="op">,</span> <span class="lit num">3</span><span class="op">,</span> <span class="lit num">5</span><span class="op">,</span> <span class="lit num">7</span><span class="op">,</span> <span class="lit num">11</span><span class="op">}</span><span class="op">;</span>
+<span class="var">grid</span><span class="op">:</span> <span class="kw">array</span> <span class="op">[</span><span class="lit num">2</span><span class="op">]</span> <span class="kw">array</span> <span class="op">[</span><span class="lit num">2</span><span class="op">]</span> <span class="ty">integer</span> <span class="op">=</span> <span class="op">{</span><span class="op">{</span><span class="lit num">1</span><span class="op">,</span> <span class="lit num">2</span><span class="op">}</span><span class="op">,</span> <span class="op">{</span><span class="lit num">3</span><span class="op">,</span> <span class="lit num">4</span><span class="op">}</span><span class="op">}</span><span class="op">;</span>
+
+<span class="cmt">/* block comment
+   over several lines */</span>
+<span class="fn">square</span><span class="op">:</span> <span class="kw">function</span> <span class="ty">integer</span> <span class="op">(</span> <span class="var">v</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">)</span><span class="op">;</span>          <span class="cmt">// prototype</span>
+<span class="fn">power</span><span class="op">:</span> <span class="kw">function</span> <span class="ty">integer</span> <span class="op">(</span> <span class="var">base</span><span class="op">:</span> <span class="ty">integer</span><span class="op">,</span> <span class="var">e</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">)</span> <span class="op">=</span> <span class="op">{</span>
+    <span class="kw">return</span> <span class="var">base</span> <span class="op">^</span> <span class="var">e</span> <span class="op">^</span> <span class="lit num">1</span><span class="op">;</span>
+<span class="op">}</span>
+<span class="fn">square</span><span class="op">:</span> <span class="kw">function</span> <span class="ty">integer</span> <span class="op">(</span> <span class="var">v</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">)</span> <span class="op">=</span> <span class="op">{</span> <span class="kw">return</span> <span class="var">v</span> <span class="op">*</span> <span class="var">v</span><span class="op">;</span> <span class="op">}</span>
+
+<span class="fn">main</span><span class="op">:</span> <span class="kw">function</span> <span class="ty">integer</span> <span class="op">(</span><span class="op">)</span> <span class="op">=</span> <span class="op">{</span>
+    <span class="var">i</span><span class="op">:</span> <span class="ty">integer</span><span class="op">;</span>
+    <span class="var">total</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">=</span> <span class="lit num">0</span><span class="op">;</span>
+    <span class="kw">for</span> <span class="op">(</span><span class="var">i</span> <span class="op">=</span> <span class="lit num">0</span><span class="op">;</span> <span class="var">i</span> <span class="op">&lt;</span> <span class="lit num">5</span><span class="op">;</span> <span class="var">i</span><span class="op">++</span><span class="op">)</span> <span class="op">{</span>
+        <span class="var">total</span> <span class="op">=</span> <span class="var">total</span> <span class="op">+</span> <span class="var">primes</span><span class="op">[</span><span class="var">i</span><span class="op">]</span> <span class="op">*</span> <span class="lit num">2</span> <span class="op">-</span> <span class="op">-</span><span class="lit num">1</span><span class="op">;</span>
+    <span class="op">}</span>
+    <span class="kw">for</span> <span class="op">(</span><span class="op">;</span><span class="op">;</span><span class="op">)</span> <span class="op">{</span> <span class="var">break_me</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">=</span> <span class="lit num">1</span><span class="op">;</span> <span class="kw">return</span> <span class="lit num">0</span><span class="op">;</span> <span class="op">}</span>
+    <span class="kw">while</span> <span class="op">(</span><span class="var">total</span> <span class="op">&gt;</span> <span class="lit num">0</span> <span class="op">&amp;&amp;</span> <span class="op">!</span><span class="op">(</span><span class="var">total</span> <span class="op">==</span> <span class="lit num">3</span><span class="op">)</span> <span class="op">||</span> <span class="var">flag</span><span class="op">)</span> <span class="var">total</span><span class="op">--</span><span class="op">;</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="var">total</span> <span class="op">&gt;=</span> <span class="lit num">10</span><span class="op">)</span> <span class="kw">print</span> <span class="lit str">&quot;big&quot;</span><span class="op">,</span> <span class="var">total</span><span class="op">,</span> <span class="lit str">&quot;\n&quot;</span><span class="op">;</span>
+    <span class="kw">else</span> <span class="kw">if</span> <span class="op">(</span><span class="var">total</span> <span class="op">!=</span> <span class="lit num">0</span><span class="op">)</span> <span class="kw">print</span> <span class="lit str">&quot;small&quot;</span><span class="op">;</span>
+    <span class="kw">else</span> <span class="kw">print</span><span class="op">;</span>
+    <span class="kw">print</span> <span class="fn">square</span><span class="op">(</span><span class="fn">power</span><span class="op">(</span><span class="lit num">2</span><span class="op">,</span> <span class="lit num">3</span><span class="op">)</span><span class="op">)</span><span class="op">,</span> <span class="var">msg</span><span class="op">;</span>
+    <span class="kw">return</span> <span class="lit num">0</span><span class="op">;</span>
+<span class="op">}</span>
+</pre>
+</body>
+</html>

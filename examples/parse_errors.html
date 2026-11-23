@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>tests/invalid/parse_errors.bm</title>
+<style>
+body{background:#1e1e1e;margin:0;padding:1.5rem;}
+pre.code{font:14px/1.5 Consolas,"DejaVu Sans Mono",monospace;color:#e6e6e6;background:#252526;padding:1rem 1.25rem;border-radius:8px;overflow-x:auto;tab-size:4;}
+.kw{color:#4aa3ff;font-weight:bold}
+.ty{color:#2ec4b6}
+.var{color:#e6e6e6}
+.fn{color:#e6c200}
+.lit.num,.lit.bool{color:#ff9e3d}
+.lit.str{color:#7ec16e}
+.op{color:#b0b0b0}
+.cmt{color:#7a7a7a;font-style:italic}
+.err{color:#ff6b6b;text-decoration:underline;text-decoration-color:#ff3b3b;text-decoration-thickness:2px;text-underline-offset:3px}
+</style>
+</head>
+<body>
+<pre class="code"><span class="var">x</span><span class="op">:</span> <span class="kw">integer</span> <span class="op">=</span> <span class="err" title="expected expression, got ';'">;</span>
+<span class="var">y</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">=</span> <span class="lit num">42</span><span class="op">;</span>
+<span class="fn">f</span><span class="op">:</span> <span class="kw">function</span> <span class="ty">integer</span> <span class="op">(</span> <span class="var">a</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">)</span> <span class="op">=</span> <span class="op">{</span>
+    <span class="kw">if</span> <span class="op">(</span><span class="var">y</span> <span class="op">&gt;</span> <span class="lit num">0</span>
+    <span class="err" title="expected ')', got '{'">{</span>
+        <span class="kw">return</span> <span class="var">y</span>
+    <span class="err" title="expected ';', got '}'">}</span>
+    <span class="var">z</span><span class="op">:</span> <span class="kw">integer</span> <span class="op">=</span> <span class="op">(</span><span class="lit num">1</span> <span class="op">+</span> <span class="err" title="expected expression, got ';'">;</span>
+    <span class="kw">return</span> <span class="var">a</span><span class="op">;</span>
+<span class="op">}</span>
+<span class="err" title="expected a declaration ('name : type ...'), got '}'">}</span>
+<span class="var">w</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">=</span> <span class="lit num">7</span><span class="op">;</span>
+<span class="err" title="expected a declaration ('name : type ...'), got 'else'">else</span>
+<span class="lit num">1</span> <span class="op">+</span> <span class="lit num">2</span><span class="op">;</span>
+<span class="fn">g</span><span class="op">:</span> <span class="kw">function</span> <span class="ty">void</span> <span class="op">(</span><span class="op">)</span> <span class="op">=</span> <span class="op">{</span>
+    <span class="var">a</span><span class="op">:</span> <span class="ty">integer</span>
+    <span class="err" title="expected ';', got 'b'">b</span><span class="op">:</span> <span class="ty">integer</span> <span class="op">=</span> <span class="lit num">3</span><span class="op">;</span>
+    <span class="lit num">3</span> <span class="err" title="invalid assignment target">=</span> <span class="var">a</span><span class="op">;</span>
+</pre>
+</body>
+</html>
